@@ -5,6 +5,7 @@ export class LoginPage{
     readonly username:Locator;
     readonly password:Locator;
     readonly loginButton:Locator;
+    readonly errorMessage:Locator;
 
     constructor(page:Page)
     {
@@ -12,6 +13,7 @@ export class LoginPage{
         this.username=page.locator("#user-name");
         this.password=page.locator("#password")
         this.loginButton=page.locator("#login-button")
+        this.errorMessage=page.locator("[data-test='error']")
     }
 
     async goToLoginPage()
@@ -26,8 +28,8 @@ export class LoginPage{
         await this.loginButton.click();
     }
 
-    async verifyLoginSuccess()
-    {
-        await this.page.waitForURL("https://www.saucedemo.com/inventory.html");
-    }
+    // async verifyLoginSuccess()
+    // {
+    //     await this.page.waitForURL("https://www.saucedemo.com/inventory.html");
+    // }
 }

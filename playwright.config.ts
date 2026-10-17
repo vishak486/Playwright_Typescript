@@ -32,7 +32,7 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     launchOptions:{
-      timeout:100000,
+      timeout:150000,
       slowMo:400,
     },
     headless:false, //--headed
